@@ -1,0 +1,179 @@
+@import '../../styles/variables';
+
+$item-count: 8;
+$angleInPercent: percentage(360 /$item-count);
+@mixin on-circle($circle-size) {
+  width:  $circle-size;
+  height: $circle-size;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+
+  > * {
+    display: block;
+    position: absolute;
+    top:  45%;
+    left: -8%;
+
+    $angle: (360 / $item-count);
+    $rot: -90; //set the top as clockwise
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform:
+                rotate($rot * 1deg)
+                translate($circle-size / 2.2)
+      }
+      $rot: $rot + $angle;
+    }
+  }
+}
+
+
+.dial-container{
+  background-color: $darkColor;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle-container{
+  @include on-circle($circle-size: 250px);
+  //background-color: $transparentColor;
+  border:  90px solid $transparentColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  //img{
+  //  display: block;
+  //  max-width: 100%;
+  //  border-radius: 50%;
+  //  filter: grayscale(100%);
+  //  border: solid 5px tomato;
+  //  transition: .15s;
+  //
+  //  &:hover {
+  //    filter: grayscale(0);
+  //  }
+  //}
+
+}
+span{
+  display: flex;
+  background-color: blue;
+  width: 80px;
+  height: 16px;
+  padding: 0 18.125px;
+  max-height: 10px;
+  transform: rotate(90deg);
+
+}
+
+.half-circle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  width: 200px;
+  border-radius: 150px 150px 0 0;
+  background-color: $transparentColor;
+  border: 3px solid $darkColor;
+  outline: 0;
+  font-size: 24px;
+  //todo fix this when i do curved text
+  span{
+    color: $fontColor;
+  }
+
+  &::after{
+    position: absolute;
+    content: '';
+    height: 30px;
+    width: 60px;
+    border-radius: 45px 45px 0 0;
+    background-color: $darkColor;
+    top: 70px;
+    left: 70px;
+  }
+}
+.mag-circle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, 50%);
+  height: 100px;
+  width: 100px;
+  border-radius: 0 0 0 100px;
+  background-color: $transparentColor;
+  border: 3px solid $darkColor;
+  img{
+    position: absolute;
+    left: 35px;
+    top: 25px;
+    width: $imgWidth;
+
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 70px;
+    transform: translate(0%, 0%);
+    height: 30px;
+    width: 30px;
+    border-radius: 0 0 0 30px;
+    background-color: $darkColor;
+    border: none;
+  }
+  //&:hover{
+  //  margin: 3px 0 0 -3px;
+  //  transition: all 0.4s ease-in-out;
+  //}
+}
+.visit-circle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 50%);
+  height: 100px;
+  width: 100px;
+  border-radius: 0 0 100px 0;
+  background-color: $transparentColor;
+  border: 3px solid $darkColor;
+  img{
+    position: absolute;
+    left: 25px;
+    top: 20px;
+    width: $imgWidth;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0%, 0%);
+    height: 30px;
+    width: 30px;
+    border-radius: 0 0 30px 0;
+    background-color: $darkColor;
+  }
+
+  //&:hover{
+  //  margin: 3px 0 0 3px;
+  //  transition: all 0.4s ease-in-out;
+  //}
+}
+/*This isnt as important but covers up the blending lines that kept rendering on my browser*/
+.center-circle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-46%, 40%);
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  background-color: $darkColor;
+  z-index: 1;
+}
