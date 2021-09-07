@@ -1,4 +1,9 @@
 @import "../../styles/variables";
+
+$numberOfSlices:8;
+$radius: (360/$numberOfSlices) * 1deg;
+$skewCalc: ((360/$numberOfSlices) + 90) * 1deg;
+
 .sliceWrapper {
   position: relative;
   border: 1px solid black;
@@ -37,62 +42,16 @@ li {
   z-index: 5;
   border-radius: 50%;
 }
-li:first-child {
-  transform: rotate(0 * 45deg) skewY(135deg);
-}
-
-li:nth-child(2) {
-  transform: rotate(1* 45deg) skewY(135deg);
-}
-
-li:nth-child(3) {
-  transform: rotate(2* 45deg) skewY(135deg);
-}
-
-li:nth-child(4) {
-  transform: rotate(3* 45deg) skewY(135deg);
-}
-
-li:nth-child(5) {
-  transform: rotate(4* 45deg) skewY(135deg);
-}
-li:nth-child(6) {
-  transform: rotate(5* 45deg) skewY(135deg);
-}
-li:nth-child(7) {
-  transform: rotate(6* 45deg) skewY(135deg);
-}
-li:nth-child(8) {
-  transform: rotate(7* 45deg) skewY(135deg);
-}
-li:first-child .slice {
+.lit{
   background: $lightColor;
 }
-
-li:nth-child(2) .slice {
-  background: $lightColor;
+.unlit{
+  background: $darkColor;
 }
-
-li:nth-child(3) .slice {
-  background: $lightColor;
-}
-
-li:nth-child(4) .slice {
-  background: $lightColor;
-}
-
-li:nth-child(5) .slice {
+.red{
   background: $red;
 }
-li:nth-child(6) .slice {
-  background: $red;
-}
-li:nth-child(7) .slice {
-  background: $mediumColor;
-}
-li:nth-child(8) .slice {
-   background: $mediumColor;
- }
+
 
 .cross{
   overflow: visible;
