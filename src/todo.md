@@ -11,3 +11,7 @@ This is my current todo list.
 How to do this circle thing
 
  
+
+
+Resources
+https://stackoverflow.com/questions/14184494/segments-in-a-circle-using-css3
