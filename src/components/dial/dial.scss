@@ -79,7 +79,7 @@ span{
   width: 200px;
   border-radius: 150px 150px 0 0;
   background-color: $transparentColor;
-  border: 3px solid $darkColor;
+  border: 5px solid $darkColor;
   outline: 0;
   font-size: 24px;
   //todo fix this when i do curved text
@@ -107,7 +107,7 @@ span{
   width: 100px;
   border-radius: 0 0 0 100px;
   background-color: $transparentColor;
-  border: 3px solid $darkColor;
+  border: 5px solid $darkColor;
   img{
     position: absolute;
     left: 35px;
@@ -141,7 +141,7 @@ span{
   width: 100px;
   border-radius: 0 0 100px 0;
   background-color: $transparentColor;
-  border: 3px solid $darkColor;
+  border: 5px solid $darkColor;
   img{
     position: absolute;
     left: 25px;
@@ -176,4 +176,57 @@ span{
   border-radius: 100%;
   background-color: $darkColor;
   z-index: 1;
+}
+
+
+
+/*Outer Ring with indicators*/
+.sliceWrapper {
+  position: relative;
+  border: 10px solid $transparentColor;
+  padding: 0;
+  top: 50px;
+  left: 110px;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+
+}
+
+.slice {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+}
+
+li {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  border-top: 10px solid $transparentColor;
+  border-bottom: 10px solid $transparentColor;
+}
+.center{
+  position: relative;
+  top: 50px;
+  left: -135px;
+  height: 220px;
+  width: 220px;
+  background-color: $transparentColor;
+  border-radius: 50%;
+}
+.lit{
+  background: $lightColor;
+}
+.unlit{
+  background: $darkColor;
+}
+.red{
+  background: $red;
 }

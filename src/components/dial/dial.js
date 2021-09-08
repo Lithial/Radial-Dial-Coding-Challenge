@@ -4,13 +4,14 @@ import visit from '../../assets/Visit Arrow.svg'
 import React from 'react';
 import HalfCircle from "./halfCircle";
 import QuaterCircle from "./quaterCircle";
-import OuterRing from "./outerRing";
+import IndicatorRing from "./indicator";
 
 
 const Dial = ({circleName, indicators}) => {
     return (
         <div className="dial-container">
-            <OuterRing indicators={indicators}/>
+            <IndicatorRing indicators={indicators}/>
+            <div className="center"/>
             <HalfCircle text={circleName}/>
             <QuaterCircle className="mag-circle" imgName={mag} imgDesc={"Magnifier Icon"}/>
             <QuaterCircle className="visit-circle" imgName={visit} imgDesc={"Visit Icon"}/>
