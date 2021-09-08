@@ -1,6 +1,6 @@
 import React from 'react';
-
-const QuaterCircle = ({className, imgName, imgDesc}) => {
+import './quarterCircle.scss';
+const QuarterCircle = ({className, imgName, imgDesc}) => {
     return (
         <div className={className}>
             <img src={imgName} alt={imgDesc}/>
@@ -8,4 +8,4 @@ const QuaterCircle = ({className, imgName, imgDesc}) => {
     );
 };
 
-export default QuaterCircle;
+export default QuarterCircle;

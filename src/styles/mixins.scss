@@ -1,0 +1,39 @@
+@import "variables";
+
+
+
+/*Mixins for Quarter Segments*/
+@mixin quarter-circle-setup($border){
+  display: grid;
+  height: 100px;
+  width: 100px;
+  background-color: $transparentColor;
+  border: 2px solid $darkColor;
+  border-radius: $border;
+  z-index: 2;
+
+}
+@mixin quarter-after($top, $left, $border-radius){
+  content: '';
+  position: relative;
+  top: $top;
+  left: $left;
+  height: 25px;
+  width: 25px;
+  background-color: $darkColor;
+  border: none;
+  border-radius: $border-radius;
+  //outline: 1px solid red;
+}
+@mixin internalImage($left, $top, $width){
+  img{
+    position: relative;
+    left: $left;
+    top: $top;
+    width: $width;
+  }
+}
+@mixin quarter-animations($margin){
+  margin: $margin;
+  transition: all 0.3s ease-in-out;
+}
