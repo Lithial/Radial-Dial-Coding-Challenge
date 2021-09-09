@@ -3,7 +3,7 @@
 /*Outer Ring with indicators now with grid*/
 .gridItem{
   display: grid;
-  grid-area: 1 /-1;
+  grid-area: 1 /1;
 }
 .sliceWrapper {
   position: relative;
@@ -14,7 +14,6 @@
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
-
 }
 .slice {
   position: absolute;
@@ -29,20 +28,9 @@ li.chunk {
   right: -50%;
   width: 100%;
   height: 100%;
-  transform-origin: 0% 100%;
-  border-top: 10px solid $transparentColor;
-  border-bottom: 10px solid $transparentColor;
+  transform-origin: 0 100%;
 }
-.center{
-  display: grid;
-  grid-area: 1 /-1;
-  position: relative;
-  margin: auto;
-  height: 220px;
-  width: 220px;
-  background-color: $transparentColor;
-  border-radius: 50%;
-}
+
 .slice.lit{
   background: $lightColor;
 }

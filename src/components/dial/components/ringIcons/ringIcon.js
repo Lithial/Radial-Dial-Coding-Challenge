@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './ringIcon.scss';
+import {useDial} from "../../../../context/dialContext";
 
 const getIconPos = (index,numberOfSlices) => {
     let angle = Math.round(360 / numberOfSlices);
@@ -14,24 +15,44 @@ const getIconPos = (index,numberOfSlices) => {
     }
 }
 
-const RingIcon = ({indicators}) => {
-    const numberOfSlices = indicators.length;
-    if(indicators.length >= 1 || indicators<= 12){
-        return (
-            <div className="gridItem">
-                {
-                    indicators.map((indicator, index) => {
-                        return <li style={getIconPos(index, numberOfSlices)} className={`cross ${indicator.type}`}>x</li>
-                    })
-                }
-            </div>
-        );
-    }
-    else{
-        return(<div>
+const RingIcon = () => {
+    const {indicators} = useDial();
 
-        </div>)
+    const mapIndicators = (numberOfSlices) => {
+        return indicators.map((indicator, index) => {
+            return <li key={`ringIcon:${index}`} style={getIconPos(index, numberOfSlices)} className={`cross ${indicator}`}>x</li>
+        })
     }
+    const updateIcons = () => {
+        const numberOfSlices = indicators.length;
+        if(indicators.length > 0 && indicators.length < 13){
+            return (
+                <div className="gridItem">
+                    {
+                        mapIndicators(numberOfSlices)
+                    }
+                </div>
+            );
+        }
+        else {
+            console.log("else me")
+            return (
+                <div className="gridItem">
+                    {
+                    }
+                </div>
+            );
+        }
+    }
+    useEffect(() => {
+        updateIcons();
+    },[indicators]);
+
+
+    return (
+        updateIcons()
+    )
+
 };
 
 export default RingIcon;
