@@ -165,17 +165,6 @@ This class holds all the center elements together
   grid-column-gap: 0;
   grid-row-gap: 0;
 }
-//
-//.center-circle{
-//  display: grid;
-//  grid-area: 1/-1/ 1/-1;
-//  border: solid 1px;
-//  height: 60px;
-//  width: 60px;
-//  border-radius: 100%;
-//  background-color: $darkColor;
-//  z-index: 1;
-//}
 
 /*Curved Text Classes*/
 /*I use an SVG to curve the text*/
@@ -326,6 +315,7 @@ li.cross{
   justify-content: center;
   width: 26px;
   height: 26px;
+  padding-bottom: 3px;
   border-radius: 50%;
   background-color: $red;
   color: white;

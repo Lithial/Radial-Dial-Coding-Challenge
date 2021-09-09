@@ -31,7 +31,9 @@ const RingIcon = () => {
     // of slices.
     const mapIndicators = (numberOfSlices) => {
         return indicators.map((indicator, index) => {
-            return <li key={`ringIcon:${index}`} style={getIconPos(index, numberOfSlices)} className={`cross ${indicator}`}>x</li>
+            return <li key={`ringIcon:${index}`} style={getIconPos(index, numberOfSlices)} className={`cross ${indicator}`}>
+                <span>&#9587;</span>
+            </li>
         })
     }
 
