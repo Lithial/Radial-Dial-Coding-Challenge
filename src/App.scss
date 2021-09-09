@@ -7,8 +7,22 @@
 
 .app{
   background-color: $darkColor;
-  height: 100vh;
+  min-height: 100vh;
+
+  margin: auto;
+}
+
+.flexContainer{
   display: flex;
-  justify-content: center;
+  min-width: 100px;
+
+
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   align-items: center;
+  justify-content: center;
+  height: 100%;
 }
