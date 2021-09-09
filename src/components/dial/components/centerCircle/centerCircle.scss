@@ -2,7 +2,7 @@
 
 .gridItem{
   display: grid;
-  grid-area: 1 / -1;
+  grid-area: 1 / 1;
 }
 .container{
   width: 200px;
@@ -11,8 +11,8 @@
   display: grid;
   grid-template-columns: repeat(2, 100px);
   grid-template-rows: repeat(2, 100px);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
 }
 
 .center-circle{

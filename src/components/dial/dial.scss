@@ -1,15 +1,24 @@
 @import '../../styles/variables';
 
-
-
-
 .dial-container{
   margin: auto;
   width: 300px;
   height: 300px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 300px;
   grid-template-rows: 1fr;
   grid-column-gap: 0;
   grid-row-gap: 0;
+}
+
+.center{
+  display: grid;
+  grid-area: 1 /-1;
+  position: relative;
+  margin: auto;
+  height: 220px;
+  width: 220px;
+  background-color: $darkColor;
+  border: 6px solid $transparentColor;
+  border-radius: 50%;
 }

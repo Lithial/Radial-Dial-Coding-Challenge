@@ -7,15 +7,17 @@ import RingIcon from "./components/ringIcons/ringIcon";
 
 const Dial = ({circleName, indicators}) => {
     return (
-        <div className="dial-container">
-            <IndicatorRing indicators={indicators}/>
-            <div className="gridItem">
-                <div className="center"/>
+        <div className="flexContainer">
+            <div className="dial-container">
+                <IndicatorRing/>
+                <div className="gridItem">
+                    <div className="center"/>
+                </div>
+                <CenterCircle text={circleName}/>
+                <RingIcon/>
+                {/*<StateChanger/>*/}
             </div>
-            <CenterCircle text={circleName}/>
-            <RingIcon indicators={indicators}/>
         </div>
-
     );
 };
 
