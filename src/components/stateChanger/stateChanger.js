@@ -1,7 +1,10 @@
 import React from 'react';
-import './stateChanger.scss';
 import {useDial} from "../../context/dialContext";
 
+/*
+This component holds the test buttons. I didn't really style these or anything
+because they weren't a part of the initial design.
+*/
 const StateChanger = () => {
     const {addIndicator, removeIndicator} = useDial();
 

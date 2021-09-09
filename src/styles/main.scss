@@ -1,0 +1,339 @@
+@import './variables';
+
+/*Mixins for Quarter Segments*/
+/*Function for the bottom button quarters*/
+@mixin quarter-circle-setup($border){
+  display: grid;
+  height: 100px;
+  width: 100px;
+  background-color: $transparentColor;
+  border: 2px solid $darkColor;
+  border-radius: $border;
+  z-index: 2;
+}
+/*Function for the circles on the quarters*/
+@mixin quarter-after($top, $left, $border-radius){
+  content: '';
+  position: relative;
+  top: $top;
+  left: $left;
+  height: 25px;
+  width: 25px;
+  background-color: $darkColor;
+  border-radius: $border-radius;
+}
+/*Function for the icons in the quarters*/
+@mixin internalImage($left, $top, $width){
+  img{
+    position: relative;
+    left: $left;
+    top: $top;
+    width: $width;
+  }
+}
+/*Animations for the quarters*/
+@mixin quarter-animations($margin){
+  margin: $margin;
+  transition: all 0.3s ease-in-out;
+}
+
+/*App Class*/
+/*basic reset*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app{
+  /*Set the background to full screen
+  and centers the image in the blue.
+  */
+  background-color: $darkColor;
+  min-height: 100vh;
+  margin: auto;
+}
+
+/*Outside flex component*/
+.flex{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Set the flex items mins*/
+.flexContainer{
+  display: flex;
+  min-width: 100px;
+}
+
+/*StateChanger Class*/
+/*These are the classes for the row of testing buttons*/
+.stateChanger{
+  margin: auto;
+  position: relative;
+  width: 150px;
+  height: 100px;
+}
+/*Buttons not including specific colors*/
+.button {
+  display:inline-block;
+  width: 120px;
+  margin: 5px 0;
+  padding:4px 12px;
+  background-color:#44c767;
+  border:none;
+  border-radius:28px;
+  cursor:pointer;
+  color:#333;
+  font-family: Arial, sans-serif;
+  font-size:14px;
+  text-decoration:none;
+  text-shadow:0 1px 0 #2f6627;
+  &:hover{
+    background-color:#fff;
+  }
+  &:active{
+    position:relative;
+    top:1px;
+  }
+}
+
+/*Color classes*/
+.red {
+  background-color: $red;
+}
+.lit {
+  background-color: $lightColor;
+}
+.unlit{
+  background-color: $mediumColor;
+}
+
+/*Dial class*/
+/*Grid container for the dial*/
+/*
+I stack all the elements centered using grid
+and margin auto so I don't have to use much
+absolute positioning.
+*/
+.dial-container{
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+}
+/*
+This item sits behind all the elements in the
+center of the dial to block color coming through
+and providing the right color for transparency
+*/
+.center{
+  display: grid;
+  grid-area: 1 /1;
+  position: relative;
+  margin: auto;
+  height: 220px;
+  width: 220px;
+  background-color: $darkColor;
+  border: 6px solid $transparentColor;
+  border-radius: 50%;
+}
+
+/*Center Circle Classes*/
+.gridItem{
+  display: grid;
+  grid-area: 1 / 1;
+}
+/*
+This class holds all the center elements together
+*/
+.circle-container{
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  grid-template-rows: repeat(2, 100px);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+}
+//
+//.center-circle{
+//  display: grid;
+//  grid-area: 1/-1/ 1/-1;
+//  border: solid 1px;
+//  height: 60px;
+//  width: 60px;
+//  border-radius: 100%;
+//  background-color: $darkColor;
+//  z-index: 1;
+//}
+
+/*Curved Text Classes*/
+/*I use an SVG to curve the text*/
+path {
+  fill: transparent;
+}
+text {
+  fill: $fontColor;
+  font-family: sans-serif;
+  text-anchor: middle;
+}
+.text{
+  display: grid;
+  position: relative;
+  top: 20px;
+}
+
+/*Half Circle Classes*/
+/*
+This is the class for the top half of the dial
+*/
+.half-circle{
+  display: grid;
+  grid-area: 2/1 /1 /1;
+  height: 100px;
+  width: 200px;
+  border-radius: 150px 150px 0 0;
+  background-color: $transparentColor;
+  border-bottom: 2px solid $darkColor;
+  border-top: 5px solid $darkColor;
+  border-right: 5px solid $darkColor;
+  border-left: 5px solid $darkColor;
+  outline: 0;
+  font-size: 24px;
+  z-index: 2;
+
+  &::after{
+    position: relative;
+    content: '';
+    height: 25px;
+    width: 50px;
+    border: 1px solid $darkColor;
+    border-radius: 45px 45px 0 0;
+    background-color: $darkColor;
+    top: -47px;
+    left: 68px;
+  }
+}
+
+/*Outer Ring classes*/
+/*
+These classes handle the outer ring.
+*/
+.sliceWrapper {
+  position: relative;
+  margin: auto;
+  border: 10px solid $transparentColor;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+}
+/*
+This handles the indicators positioning.
+*/
+li.chunk {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 100%;
+}
+/*This handles the slices themselves*/
+.slice {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+}
+
+
+
+
+/*Quarter Classes*/
+/*
+This section uses mixins because they are two
+similar objects. I could have also used additive
+classes.
+*/
+.mag-circle{
+  @include quarter-circle-setup(0 0 0 100px);
+  border-bottom: 5px solid $darkColor;
+  border-left: 5px solid $darkColor;
+  grid-area: 2/1 /2 /1;
+
+  &::after{
+    @include quarter-after(-58px, 68px,  0 0 0 30px);
+
+  }
+  @include internalImage(33px,18px, 46px);
+  &:hover{
+    @include quarter-animations(3px 0 0 -3px)
+  }
+}
+
+.visit-circle{
+  @include quarter-circle-setup(0 0 100px 0);
+  border-bottom: 5px solid $darkColor;
+  border-right: 5px solid $darkColor;
+  grid-area: 2/2/2/2;
+  &::after{
+    @include quarter-after(-55px, -2px,0 0 30px 0);
+  }
+  @include internalImage(20px, 15px,40px);
+
+  &:hover{
+    @include quarter-animations(3px 0 0 3px);
+  }
+}
+
+/*Ring Icons Classes*/
+/*
+For the icons on the red indicators i use a ring
+that I split and style using procedurally generated
+JSS in its component files. Here we have the positioning
+and coloring for those elements.
+*/
+.gridItem{
+  display: grid;
+  grid-area: 1 / 1;
+  padding: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 100%;
+  list-style: none;
+  position: relative;
+}
+/*
+  This is set to display none unless the red
+  class.
+  TODO change the x's to be better
+*/
+li.cross{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: $red;
+  color: white;
+  font-size: 10px;
+  font-family: sans-serif;
+
+}
+li.cross.red{
+  display: flex;
+}
+

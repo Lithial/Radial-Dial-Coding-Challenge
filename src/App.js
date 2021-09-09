@@ -1,4 +1,4 @@
-import './App.scss';
+import './styles/main.scss';
 import Dial from "./components/dial/dial";
 import StateChanger from "./components/stateChanger/stateChanger";
 

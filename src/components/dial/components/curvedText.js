@@ -1,5 +1,8 @@
 import React from 'react';
-import './curvedText.scss';
+/*
+Here I use an SVG that I borrowed from the internet and modified.
+The text follows along the line using text path.
+*/
 const CurvedText = ({ text, objectSize = 90, spacing = 15, offset = 25, overlap = false }) => {
     const d = objectSize + spacing * 2;
     const r = objectSize / 2 + spacing /2;

@@ -1,7 +1,8 @@
 import React from 'react';
-import './halfCircle.scss'
-import CurvedText from "../curvedText/curvedText";
-
+import CurvedText from "./curvedText";
+/*
+This is the top half circle from the gauge.
+*/
 const HalfCircle = ({text}) => {
 
   return(

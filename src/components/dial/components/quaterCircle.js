@@ -1,5 +1,8 @@
 import React from 'react';
-import './quarterCircle.scss';
+
+/*
+Quarter circle button components. Made generic to handle both buttons.
+*/
 const QuarterCircle = ({className, imgName, imgDesc}) => {
     return (
         <div className={className}>
