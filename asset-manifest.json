@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Radial-Dial-Coding-Challenge/static/css/main.cfea2b37.chunk.css",
+    "main.css": "/Radial-Dial-Coding-Challenge/static/css/main.986b60e0.chunk.css",
     "main.js": "/Radial-Dial-Coding-Challenge/static/js/main.a77126c4.chunk.js",
     "main.js.map": "/Radial-Dial-Coding-Challenge/static/js/main.a77126c4.chunk.js.map",
     "runtime-main.js": "/Radial-Dial-Coding-Challenge/static/js/runtime-main.a2a0480a.js",
@@ -8,7 +8,7 @@
     "static/js/2.cc66f433.chunk.js": "/Radial-Dial-Coding-Challenge/static/js/2.cc66f433.chunk.js",
     "static/js/2.cc66f433.chunk.js.map": "/Radial-Dial-Coding-Challenge/static/js/2.cc66f433.chunk.js.map",
     "index.html": "/Radial-Dial-Coding-Challenge/index.html",
-    "static/css/main.cfea2b37.chunk.css.map": "/Radial-Dial-Coding-Challenge/static/css/main.cfea2b37.chunk.css.map",
+    "static/css/main.986b60e0.chunk.css.map": "/Radial-Dial-Coding-Challenge/static/css/main.986b60e0.chunk.css.map",
     "static/js/2.cc66f433.chunk.js.LICENSE.txt": "/Radial-Dial-Coding-Challenge/static/js/2.cc66f433.chunk.js.LICENSE.txt",
     "static/media/Magnifier.8b7b84f8.svg": "/Radial-Dial-Coding-Challenge/static/media/Magnifier.8b7b84f8.svg",
     "static/media/Visit Arrow.1582e980.svg": "/Radial-Dial-Coding-Challenge/static/media/Visit Arrow.1582e980.svg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.a2a0480a.js",
     "static/js/2.cc66f433.chunk.js",
-    "static/css/main.cfea2b37.chunk.css",
+    "static/css/main.986b60e0.chunk.css",
     "static/js/main.a77126c4.chunk.js"
   ]
 }
