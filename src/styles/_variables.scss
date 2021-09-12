@@ -11,3 +11,11 @@ $red: #C42E2E;
 //Font color is for the text and icons
 $fontColor:#EBF1F5;
 
+// Named Breakpoint Values
+$breakpoints: (
+        small: 320px,
+        medium: 640px,
+        large: 1024px,
+        x-large: 1600px,
+        xx-large: 2800px,
+);

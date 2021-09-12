@@ -1,5 +1,5 @@
 @import './variables';
-
+@import './breakpoints';
 /*Mixins for Quarter Segments*/
 /*Function for the bottom button quarters*/
 @mixin quarter-circle-setup($border){
@@ -59,15 +59,19 @@
   width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  @include breakpoints(small){
+    flex-direction: row;
+  }
 }
 
 /*Set the flex items mins*/
 .flexContainer{
   display: flex;
   min-width: 100px;
+
 }
 
 /*StateChanger Class*/
